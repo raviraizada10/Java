@@ -1,6 +1,7 @@
 package main.java.org.java8.bpn;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ApplePrint {
@@ -18,7 +19,10 @@ public class ApplePrint {
 	public static void main(String[] args) {
 		
 		ApplePrint ap = new ApplePrint();
-		
+		List<Apple> inventory = Arrays.asList(new Apple(45, "Red"), 
+											  new Apple(98, "Green"),
+											  new Apple(225, "Dark Red"));
+											  
 		Apple a1 = new Apple();
 		a1.setColour("red");
 		a1.setWeight(45);
@@ -36,6 +40,7 @@ public class ApplePrint {
 		appleList.add(a3);
 		
 		ap.prettyPrintApple(appleList, new AppleSimpleFormatter());
+		ap.prettyPrintApple(inventory, new AppleFancyFormatter());
 
 	}
 
