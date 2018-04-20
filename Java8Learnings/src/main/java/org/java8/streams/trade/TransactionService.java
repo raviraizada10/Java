@@ -17,6 +17,7 @@ public class TransactionService
 		List<Transaction> tr2011 = transactions.stream()
 											   .filter(transaction -> transaction.getYear() == 2011)
 											   .sorted(comparing(Transaction::getValue))
+											   .limit(1)
 											   .collect(toList());
 		return tr2011;
 	} 
@@ -111,7 +112,7 @@ public class TransactionService
 		
 		System.out.println(TransactionService.transactinsByYear(transactions));
 		
-		System.out.println(TransactionService.uniqueCities(transactions));
+		/*System.out.println(TransactionService.uniqueCities(transactions));
 		
 		System.out.println(TransactionService.cityTraderSorted(transactions));
 		
@@ -125,7 +126,7 @@ public class TransactionService
 		
 		System.out.println(TransactionService.getHighestTransaction(transactions));
 		
-		System.out.println(TransactionService.getSmallestTransaction(transactions));
+		System.out.println(TransactionService.getSmallestTransaction(transactions));*/
 	}
 
 }
